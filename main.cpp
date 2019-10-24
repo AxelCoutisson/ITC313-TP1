@@ -1,8 +1,8 @@
 #include <iostream>
-#include "Date.h"
+#include "Client.h"
 
 int main(){
-  Date date(5,8,2019);
-  std::cout << date.getDay();
+  Client bob(0,"boby", "bob", 1);
+  std::cout << bob.getName();
   return 0;
 }
