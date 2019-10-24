@@ -2,4 +2,4 @@
 
 ##Tp1 C++ dginhac
 
-> To be or not to be, that is the question.
+> question 5 en cours, toute les questions en dessous de celle-ci ont été finis.
