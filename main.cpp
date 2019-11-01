@@ -1,8 +1,9 @@
 #include <iostream>
-#include "Client.h"
+#include "Class/Chambre/Chambre.h"
+using namespace std;
 
 int main(){
-  Client bob(0,"boby", "bob", 1);
-  std::cout << bob.getName();
+  Chambre marcel(0,"suit", 158);
+  cout << marcel.getType() << endl;
   return 0;
 }

@@ -1,23 +1,25 @@
-#ifndef DATE_H
-#define DATE_H
+//Created by Axel Coutisson on 29/10/2019
+#ifndef CHAMBRE_H
+#define CAMBRE_H
 
-class Date{
+#include <string>
+using namespace std;
+class Chambre{
 public:
-  Date();
-  Date(int day, int month, int year);
+//constructor
+  Chambre(int id, string type, double price);
   //getters
-  int getDay();
-  int getMonth();
-  int getYear();
+  int getId();
+  string getType();
+  double getPrice();
   //setters
-  void setDay(int day);
-  void setMonth(int month);
-  void setYear(int year);
+  void setId(int id);
+  void setType(string type);
+  void setPrice(double price);
 private:
   //variables
-  int m_day;
-  int m_month;
-  int m_year;
+  int m_id;
+  string m_type;
+  double m_price;
 };
-
 #endif

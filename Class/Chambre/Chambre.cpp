@@ -1,38 +1,39 @@
-#include "Date.h"
+//Created by Axel Coutisson on 29/10/2019
+
+#include "Chambre.h"
 #include <string>
 
-//constructors//
-Date::Date(int day, int month, int year) : m_day(day), m_month(month), m_year(year)
+using namespace std;
+
+Chambre::Chambre(int id, string type, double price) : m_id(id), m_type(type), m_price(price)
 {}
 
-//getters//
-int Date::getDay()
+int Chambre::getId()
 {
-  return m_day;
+  return m_id;
 }
 
-int Date::getMonth()
+string Chambre::getType()
 {
-  return m_month;
+  return m_type;
 }
 
-int Date::getYear()
+double Chambre::getPrice()
 {
-  return m_year;
+  return m_price;
 }
 
-//setters//
-void Date::setDay(int day)
+void Chambre::setId(int id)
 {
-  m_day = day;
+  m_id = id;
 }
 
-void Date::setMonth(int month)
+void Chambre::setType(string type)
 {
-  m_month = month;
+  m_type = type;
 }
 
-void Date::setYear(int year)
+void Chambre::setPrice(double price)
 {
-  m_year = year;
+  m_price = price;
 }
