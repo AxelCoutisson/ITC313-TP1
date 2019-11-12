@@ -1,25 +1,31 @@
 //Created by Axel Coutisson on 29/10/2019
 #ifndef CHAMBRE_H
-#define CAMBRE_H
+#define CHAMBRE_H
 
-#include <string>
 using namespace std;
 class Chambre{
 public:
+  enum chambreType
+  {
+    SUIT,
+    SINGLE,
+    DOUBLE
+  };
 //constructor
-  Chambre(int id, string type, double price);
+  Chambre(int id, Chambre::chambreType type, double price);
   //getters
   int getId();
-  string getType();
+  Chambre::chambreType getType();
   double getPrice();
   //setters
   void setId(int id);
-  void setType(string type);
+  void setType(Chambre::chambreType type);
   void setPrice(double price);
 private:
   //variables
   int m_id;
-  string m_type;
+  Chambre::chambreType m_type;
   double m_price;
+
 };
 #endif

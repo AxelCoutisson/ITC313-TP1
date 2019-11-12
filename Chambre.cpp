@@ -1,11 +1,10 @@
 //Created by Axel Coutisson on 29/10/2019
 
 #include "Chambre.h"
-#include <string>
 
 using namespace std;
 
-Chambre::Chambre(int id, string type, double price) : m_id(id), m_type(type), m_price(price)
+Chambre::Chambre(int id, Chambre::chambreType type, double price) : m_id(id), m_type(type), m_price(price)
 {}
 
 int Chambre::getId()
@@ -13,7 +12,7 @@ int Chambre::getId()
   return m_id;
 }
 
-string Chambre::getType()
+Chambre::chambreType Chambre::getType()
 {
   return m_type;
 }
@@ -28,7 +27,7 @@ void Chambre::setId(int id)
   m_id = id;
 }
 
-void Chambre::setType(string type)
+void Chambre::setType(Chambre::chambreType type)
 {
   m_type = type;
 }

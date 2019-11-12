@@ -1,9 +1,11 @@
 #include <iostream>
-#include "Class/Chambre/Chambre.h"
+#include "Chambre.h"
 using namespace std;
 
 int main(){
-  Chambre marcel(0,"suit", 158);
+  int pause;
+  Chambre marcel(0,Chambre::chambreType::SINGLE, 158);
   cout << marcel.getType() << endl;
+  cin >> pause;
   return 0;
 }
