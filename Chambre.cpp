@@ -1,13 +1,14 @@
 //Created by Axel Coutisson on 29/10/2019
 
 #include "Chambre.h"
+#include <string>
 
 using namespace std;
 
-Chambre::Chambre(int id, Chambre::chambreType type, double price) : m_id(id), m_type(type), m_price(price)
+Chambre::Chambre(string id, Chambre::chambreType type, double price) : m_id(id), m_type(type), m_price(price)
 {}
 
-int Chambre::getId()
+string Chambre::getId()
 {
   return m_id;
 }
@@ -22,7 +23,7 @@ double Chambre::getPrice()
   return m_price;
 }
 
-void Chambre::setId(int id)
+void Chambre::setId(string id)
 {
   m_id = id;
 }
