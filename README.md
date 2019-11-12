@@ -2,4 +2,4 @@
 
 ##Tp1 C++ dginhac
 
-> question 5 en cours, toute les questions en dessous de celle-ci ont été finis.
+> A partir de ce commit toute les classes pour les questions 1 à 5 sont terminées même s'il est possible que certaines corrections soient apportées par la suite.
