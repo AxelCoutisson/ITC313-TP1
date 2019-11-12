@@ -5,8 +5,8 @@ CXXFLAGS   = -Wall -Wextra -std=c++11
 DEPFLAGS   = -MMD
 LDFLAGS    =
 # Replace tp.cpp with the cpp files that need to be compiled
-SRCS       = main.cpp Hotel.cpp 	#source file
-SRCSS      = main.o Hotel.o						#name.o
+SRCS       = main.cpp Reservation.cpp Date.cpp	#source file
+SRCSS      = main.o Reservation.o Date.o		#name.o
 OBJS       = $(SRCS:.cpp=.o)
 # Replace tp_main with the name you want to give to your executable file
 TARGET     = hotelaa
