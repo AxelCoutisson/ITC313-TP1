@@ -1,33 +1,38 @@
 //Created by Axel Coutisson on 29/10/2019
+//Modified by Peter Bachour on 12/11/2019
+
 #ifndef HOTEL_H
 #define HOTEL_H
 
-#include "../Chambre/Chambre.h"
 #include <iostream>
 #include <string>
-#include <array>
+#include "Chambre.h"
+#include <vector>
 
 using namespace std;
 class Hotel
 {
   public:
     //constructor
-    Hotel(string id, string name, string city, array<Chambre, 10> list);
+    Hotel();
+    Hotel(string id, string name, string city, vector<Chambre> id_chambre);
+
     //getters
     string getId();
     string getName();
     string getCity();
-    array<Chambre> getList();
+    vector<Chambre> getArray();
 
     //setters
     void setId(string id);
     void setName(string name);
     void setCity(string city);
-    void setlist(array<Chambre> list);
+    void setArray(vector<Chambre> id_chambre);
+
   private:
     string m_id;
     string m_name;
     string m_city;
-    array m_list;
+    vector<Chambre> m_id_chambre;
 };
 #endif
