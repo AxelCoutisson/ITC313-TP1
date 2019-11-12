@@ -25,6 +25,9 @@ public:
   void setFirstname(string firstname);
   void setNbReservation(int nb);
 
+  //method
+  void showInformation();
+  
 private:
   int m_id;
   string m_name;

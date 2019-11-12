@@ -29,12 +29,14 @@ public:
   void setType(Chambre::chambreType type);
   void setPrice(double price);
 
+  //method
+  void ShowInformation();
+
 private:
 
   //variables
   string m_id;
   Chambre::chambreType m_type;
   double m_price;
-
 };
 #endif

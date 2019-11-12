@@ -2,6 +2,7 @@
 
 #include "Chambre.h"
 #include <string>
+#include <iostream>
 
 using namespace std;
 
@@ -37,3 +38,11 @@ void Chambre::setPrice(double price)
 {
   m_price = price;
 }
+
+//method
+//Shows information about a Room
+void Chambre::ShowInformation(){
+  cout << "This room is a " << m_type << "." << endl;
+  cout <<  "This room's price is " << m_price << "$." << endl;
+}
+

@@ -29,6 +29,9 @@ class Hotel
     void setCity(string city);
     void setArray(vector<Chambre> id_chambre);
 
+    //method
+    void ShowInformation();
+
   private:
     string m_id;
     string m_name;
