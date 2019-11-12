@@ -6,7 +6,8 @@
 
 #include <iostream>
 #include <string>
-#include <list>
+#include "Chambre.h"
+#include <vector>
 
 using namespace std;
 class Hotel
@@ -14,24 +15,24 @@ class Hotel
   public:
     //constructor
     Hotel();
-    Hotel(string id, string name, string city, list<int> id_chambre);
+    Hotel(string id, string name, string city, vector<Chambre> id_chambre);
 
     //getters
     string getId();
     string getName();
     string getCity();
-    list<int> getList();
+    vector<Chambre> getArray();
 
     //setters
     void setId(string id);
     void setName(string name);
     void setCity(string city);
-    void setlist(list<int> id_chambre);
+    void setArray(vector<Chambre> id_chambre);
 
   private:
     string m_id;
     string m_name;
     string m_city;
-    list<int> m_id_chambre;
+    vector<Chambre> m_id_chambre;
 };
 #endif

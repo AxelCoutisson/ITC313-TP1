@@ -2,13 +2,13 @@
 //Modified by Peter Bachour on 12/11/2019
 
 #include "Hotel.h"
+#include "Chambre.h"
 #include <iostream>
 #include <string>
-#include <list>
 
 using namespace std;
 
-Hotel::Hotel(string id, string name, string city, list<int> id_chambre) : 
+Hotel::Hotel(string id, string name, string city, vector<Chambre> id_chambre) : 
         m_id(id), m_name(name), m_city(city), m_id_chambre(id_chambre)
 {}
 
@@ -25,7 +25,7 @@ string Hotel::getCity(){
   return m_city;
 }
 
-list<int> Hotel::getList(){
+vector<Chambre> Hotel::getArray(){
     return m_id_chambre;
 }
 
@@ -42,6 +42,6 @@ void Hotel::setCity(string city){
   m_city = city;
 }
 
-void Hotel::setlist(list<int> id_chambre){
+void Hotel::setArray(vector<Chambre> id_chambre){
   m_id_chambre = id_chambre;
 }
