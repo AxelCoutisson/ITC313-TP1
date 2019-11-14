@@ -14,7 +14,6 @@ Reservation::Reservation(string id, Date startDate, Date endDate, string id_Hote
 {}
 
 //getters
-
 string Reservation::getId(){
   return m_id;
 }
@@ -73,6 +72,7 @@ void Reservation::getTotalAmount(int TotalAmount){
 }
 
 //method
+//This method calculates the total amount the client has to pay.
 int calculateTotalAmount(int nb_nights, int price_night, int discount){
   return nb_nights*price_night * (100 - discount); 
 }
