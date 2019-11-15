@@ -1,10 +1,14 @@
 //Created by Axel Coutisson on 24/10/2019
 #include "Client.h"
 #include <iostream>
+#include <vector>
 
 using namespace std;
 
 Client::Client(int id, string name, string firstname, int nbReservation) : m_id(id), m_name(name), m_firstname(firstname), m_nbReservation(nbReservation)
+{}
+
+Client::Client()
 {}
 
 //getters//
@@ -48,4 +52,54 @@ void Client::showInformation()
 {
   cout << "His id is : " <<  m_id << endl << "His lastname is : " << m_name << endl << "His firstname is : " 
   << m_firstname << endl << "He made " << m_nbReservation << " reservation(s)" << endl;
+}
+
+//static
+Client Client::chooseClient(vector<Client> clientList)
+{
+  string clientName, clientFirstName, choose = "";
+  Client rightPerson;
+  int id;
+  do{
+    cout << "Please write the client's name:" << endl;
+    cin >> clientName;
+    cout << "If the client already exist in this list write yes, else write no for create a new user" << endl << "List:" << endl;
+    for (Client client : clientList)
+      if(client.getName() == clientName)
+        cout << "id[" << client.getId() << "] : " << clientName << " " << client.getFirstname() << endl;
+    cout << endl;
+    cin >> choose;
+  }
+  while(choose != "yes" && choose != "no");
+  if (choose == "yes")
+  {
+    bool isValid = false;
+    do{
+      cout << "Kindly choose a valid client" << endl;
+      for (Client client : clientList)
+        if(client.getName() == clientName)
+          cout << "id[" << client.getId() << "] : " << clientName << " " << client.getFirstname() << endl;
+      cin >> clientFirstName;
+      for (Client client : clientList)
+        if(client.getName() == clientName && client.getFirstname() == clientFirstName)
+        {
+          isValid = true;
+          rightPerson = client;
+        }
+          
+    }
+    while(!isValid);
+    rightPerson.showInformation();
+    return rightPerson;
+  }
+  else
+  {
+    cout << "Please write the firstname:" << endl;
+    cin >> clientFirstName;
+    cout << "Please write the id:" << endl;
+    cin >> id;
+    Client newClient(id, clientName, clientFirstName, 0);
+    newClient.showInformation();
+    return newClient;
+  }
 }

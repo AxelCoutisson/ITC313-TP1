@@ -4,6 +4,7 @@
 #define CLIENT_H
 
 #include <string>
+#include <vector>
 using namespace std;
 
 class Client{
@@ -27,6 +28,9 @@ public:
 
   //method
   void showInformation();
+
+  //static
+  static Client chooseClient(vector<Client> clientList);
   
 private:
   int m_id;
