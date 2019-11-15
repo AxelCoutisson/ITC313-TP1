@@ -21,7 +21,7 @@ public:
 
   //getters
   string getId();
-  Chambre::chambreType getType();
+  string getType();
   double getPrice();
 
   //setters

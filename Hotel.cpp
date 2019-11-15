@@ -60,15 +60,15 @@ void Hotel::ShowInformation(){
   int SuitePrice = 0;
 
   for(Chambre room : m_id_chambre){
-    if(room.getType() == 1){
+    if(room.getType() == "Single"){
       Single++;
       SinglePrice = room.getPrice();
     }
-    if(room.getType() == 2){
+    if(room.getType() == "Double"){
       Double++;
       DoublePrice = room.getPrice();
     }
-    if(room.getType() == 0){
+    if(room.getType() == "Suite"){
       Suite++;
       SuitePrice = room.getPrice();
     }

@@ -14,9 +14,16 @@ string Chambre::getId()
   return m_id;
 }
 
-Chambre::chambreType Chambre::getType()
+string Chambre::getType()
 {
-  return m_type;
+  switch(m_type){
+    case 0:
+      return "Suite";
+    case 1:
+      return "Single";
+    case 2: 
+      return "Double";
+  }
 }
 
 double Chambre::getPrice()
@@ -42,7 +49,7 @@ void Chambre::setPrice(double price)
 //method
 //Shows information about a Room
 void Chambre::ShowInformation(){
-  cout << "This room is a " << m_type << "." << endl;
-  cout <<  "This room's price is " << m_price << "$." << endl;
+  cout << "This room is a " << this->getType() << " room. ";
+  cout <<  "And it's price is " << m_price << "$." << endl;
 }
 
