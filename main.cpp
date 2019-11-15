@@ -44,17 +44,18 @@ int main()
   Client client8(8, "Client", "9", 0);
   Client client9(9, "Client", "10", 0);
 
-  vector<Client> list{client0, client1, client2, client3, client4, client5, client6, client7, client8, client9};
-  for (Client client : list)
+  vector<Client> clientList{client0, client1, client2, client3, client4, client5, client6, client7, client8, client9};
+  for (Client client : clientList)
   {
      client.showInformation();
   }
 
   //Question 7 
-  Date date;
-  date.enterDate();
+  //Date date;
+  //date.enterDate();
 
   //Question 8 
+  /*
   cout << "We have " << Ocean11.getArray().size() << " rooms: " << endl;
   for(Chambre room : Ocean11.getArray()){
     cout << room.getId() << ". " ; 
@@ -64,6 +65,25 @@ int main()
   cout << "Kindly choose a valid type of room you would like. (Please type room id)." << endl;
   cin >> chosenType;
   cout << "Your chosen room [" << chosenType << "] will be checked if it is valid or not. Kindly wait." << endl;
+*/
 
+  //Question 9
+  //Client::chooseClient(clientList);
+
+  //Question 10 a
+  /*
+  Date dateone(10,11,2019);
+  Date datetwo(15,11,2019);
+  int price = 220;
+  Reservation empty;
+  int nbdays = datetwo.nbOfDays(dateone);
+  cout << nbdays << " " << empty.calculateTotalAmount(nbdays, price, 0);
+  */
+
+  //question 11
+  
+
+  int pause;
+  cin >> pause;
   return 0;
 }
