@@ -59,7 +59,7 @@ int main()
   cout << "We have " << Ocean11.getArray().size() << " rooms: " << endl;
   for(Chambre room : Ocean11.getArray()){
     cout << room.getId() << ". " ; 
-    room.ShowInformation();
+    room.showInformation();
   }
   string chosenType;
   cout << "Kindly choose a valid type of room you would like. (Please type room id)." << endl;

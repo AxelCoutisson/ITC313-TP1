@@ -48,7 +48,7 @@ void Chambre::setPrice(double price)
 
 //method
 //Shows information about a Room
-void Chambre::ShowInformation(){
+void Chambre::showInformation(){
   cout << "This room is a " << this->getType() << " room. ";
   cout <<  "And it's price is " << m_price << "$." << endl;
 }
