@@ -5,9 +5,9 @@
 
 using namespace std;
 
-class Date{
+class Date
+{
 public:
-
   Date();
   Date(int day, int month, int year);
 
@@ -24,18 +24,16 @@ public:
   //method
   void splitter(string date);
   bool validateDate(int day, int month);
-  void enterDate();
+  pair<Date, Date> enterDate();
   bool compareDates(Date start);
   int nbOfDays(Date start);
-
+  string returnDate();
 
 private:
-
   //variables
   int m_day;
   int m_month;
   int m_year;
-  
 };
 
 #endif

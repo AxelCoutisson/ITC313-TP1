@@ -29,11 +29,11 @@ class Reservation
     //setters
     void setId(string id);
     void setStartDate(Date startDate);
-    void getEndDate(Date endDate);
-    void getHotelId(string id_Hotel);
-    void getChambreId(string id_Chambre);
-    void getClientId(string id_Client);
-    void getTotalAmount(int TotalAmount);
+    void setEndDate(Date endDate);
+    void setHotelId(string id_Hotel);
+    void setChambre(string id_Chambre);
+    void setClientId(string id_Client);
+    void setTotalAmount(int TotalAmount);
 
     //method
     int calculateTotalAmount(int nb_nights, int price_night, int discount);

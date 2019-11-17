@@ -29,7 +29,7 @@ int Date::getYear()
 }
 
 //setters//
-void Date::setDay(int day) // ask if we need to check before setting 
+void Date::setDay(int day)
 {
   m_day = day;
 }
@@ -90,7 +90,7 @@ bool Date::validateDate(int day, int month)
 }
 
 //This method takes the date from the user.
-void Date::enterDate()
+pair<Date, Date> Date::enterDate()
 {
   string providedDate;
   bool validated = false;
@@ -128,9 +128,11 @@ void Date::enterDate()
   } while (!EndDate.compareDates(StartDate));
 
   cout << "The Client reserved the room for " << EndDate.nbOfDays(StartDate) << " nights." << endl;
+
+  return make_pair(StartDate, EndDate);
 }
 
-//Compares if endDate is greater than startDate
+//Compares if "this" is greater than startDate
 bool Date::compareDates(Date start)
 {
   if (start.getYear() < this->getYear())
@@ -154,7 +156,7 @@ bool Date::compareDates(Date start)
   return false;
 }
 
-// Calculates number of days between 2 days, including the end Date
+// Calculates number of days between 2 days, "this" date - start date
 int Date::nbOfDays(Date start)
 {
   const int monthDays[12] = {31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
@@ -168,4 +170,9 @@ int Date::nbOfDays(Date start)
     totalEnd += monthDays[i];
 
   return totalEnd - totalStart + 1;
+}
+
+string Date::returnDate()
+{
+  return to_string(this->getDay()) + "/" + to_string(this->getMonth()) + "/" + to_string(this->getYear());
 }

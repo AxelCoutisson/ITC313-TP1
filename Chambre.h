@@ -3,6 +3,7 @@
 #define CHAMBRE_H
 
 #include <string>
+#include "Date.h"
 
 using namespace std;
 
@@ -30,7 +31,8 @@ public:
   void setPrice(double price);
 
   //method
-  void ShowInformation();
+  void showInformation();
+  // static void selectRoom(vector<Reservation> reservationList, Hotel hotel, pair<Date,Date> dates);
 
 private:
 

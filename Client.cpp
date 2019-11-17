@@ -61,9 +61,9 @@ Client Client::chooseClient(vector<Client> clientList)
   Client rightPerson;
   int id;
   do{
-    cout << "Please write the client's name:" << endl;
+    cout << "Please type the client's name:" << endl;
     cin >> clientName;
-    cout << "If the client already exist in this list write yes, else write no for create a new user" << endl << "List:" << endl;
+    cout << "Does the client already exists in this list? (yes/no)" << endl;
     for (Client client : clientList)
       if(client.getName() == clientName)
         cout << "id[" << client.getId() << "] : " << clientName << " " << client.getFirstname() << endl;
@@ -75,7 +75,7 @@ Client Client::chooseClient(vector<Client> clientList)
   {
     bool isValid = false;
     do{
-      cout << "Kindly choose a valid client" << endl;
+      cout << "Kindly type the client's firstname" << endl;
       for (Client client : clientList)
         if(client.getName() == clientName)
           cout << "id[" << client.getId() << "] : " << clientName << " " << client.getFirstname() << endl;
@@ -94,11 +94,12 @@ Client Client::chooseClient(vector<Client> clientList)
   }
   else
   {
-    cout << "Please write the firstname:" << endl;
+    cout << "Please type the firstname:" << endl;
     cin >> clientFirstName;
-    cout << "Please write the id:" << endl;
+    cout << "Please type the id:" << endl;
     cin >> id;
     Client newClient(id, clientName, clientFirstName, 0);
+    clientList.push_back(newClient);
     newClient.showInformation();
     return newClient;
   }

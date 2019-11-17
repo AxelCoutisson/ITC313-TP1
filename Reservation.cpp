@@ -1,16 +1,15 @@
 //Created by Peter Bachour on 12/11/2019
 
 #include "Reservation.h"
-#include "Date.h"
 #include <iostream>
 #include <string>
 
 using namespace std;
 
 Reservation::Reservation(string id, Date startDate, Date endDate, string id_Hotel, 
-                string id_Chambre, string id_Client, int totalAmount) : 
+                string id_chambre, string id_Client, int totalAmount) : 
         m_id(id), m_Start_Date(startDate), m_End_Date(endDate), m_id_Hotel(id_Hotel),
-        m_id_Chambre(id_Chambre), m_id_Client(id_Client), m_total_Amount(totalAmount)
+        m_id_Chambre(id_chambre), m_id_Client(id_Client), m_total_Amount(totalAmount)
 {}
 
 //getters
@@ -51,28 +50,28 @@ void Reservation::setStartDate(Date startDate){
   m_Start_Date = startDate;
 }
 
-void Reservation::getEndDate(Date endDate){
+void Reservation::setEndDate(Date endDate){
   m_End_Date = endDate;
 }
 
-void Reservation::getHotelId(string id_Hotel){
+void Reservation::setHotelId(string id_Hotel){
   m_id_Hotel = id_Hotel;
 }
 
-void Reservation::getChambreId(string id_Chambre){
+void Reservation::setChambre(string id_Chambre){
   m_id_Chambre = id_Chambre;
 }
 
-void Reservation::getClientId(string id_Client){
+void Reservation::setClientId(string id_Client){
   m_id_Client = id_Client;
 }
 
-void Reservation::getTotalAmount(int TotalAmount){
+void Reservation::setTotalAmount(int TotalAmount){
   m_total_Amount = TotalAmount;
 }
 
 //method
 //This method calculates the total amount the client has to pay.
 int calculateTotalAmount(int nb_nights, int price_night, int discount){
-  return nb_nights*price_night * (100 - discount); 
+  return nb_nights*price_night * (100 - discount)/100; 
 }

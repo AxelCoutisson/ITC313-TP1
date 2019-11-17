@@ -3,6 +3,7 @@
 #include "Chambre.h"
 #include "Client.h"
 #include "Reservation.h"
+
 using namespace std;
 
 int main()
@@ -32,7 +33,7 @@ int main()
 
   Hotel Ocean11("Ocean11", "Le Bellagio", "Las Vegas", liste_Chambre);
 
-  Ocean11.ShowInformation();
+  // Ocean11.ShowInformation();
   Client client0(0, "Client", "1", 0);
   Client client1(1, "Client", "2", 8);
   Client client2(2, "Client", "3", 0);
@@ -47,43 +48,111 @@ int main()
   vector<Client> clientList{client0, client1, client2, client3, client4, client5, client6, client7, client8, client9};
   for (Client client : clientList)
   {
-     client.showInformation();
+    //client.showInformation();
   }
 
-  //Question 7 
-  //Date date;
-  //date.enterDate();
+  //Question 7
+  Date mm;
+  pair<Date, Date> dates = mm.enterDate();
 
-  //Question 8 
-  /*
+  // testing
+  Date m;
+  m.setDay(12);
+  m.setMonth(12);
+  m.setYear(2019);
+
+  Date m4;
+  m4.setDay(15);
+  m4.setMonth(12);
+  m4.setYear(2019);
+
+  Reservation res("1", m, m4, "Ocean11", "Single1", "Client1", 220);
+  Reservation res1("2", m, m4, "Ocean11", "Suite2", "Client2", 220);
+  Reservation res2("3", m, m4, "Ocean11", "Suite1", "Client2", 220);
+  Reservation res3("4", m, m4, "Ocean11", "Single2", "Client2", 220);
+  Reservation res4("5", m, m4, "Ocean11", "Double1", "Client2", 220);
+
+  vector<Reservation> reservationList;
+  reservationList.push_back(res);
+  reservationList.push_back(res1);
+  reservationList.push_back(res2);
+  reservationList.push_back(res3);
+  reservationList.push_back(res4);
+
+  //Question 8
   cout << "We have " << Ocean11.getArray().size() << " rooms: " << endl;
-  for(Chambre room : Ocean11.getArray()){
-    cout << room.getId() << ". " ; 
+  for (Chambre room : Ocean11.getArray())
+  {
+    cout << room.getId() << ". ";
     room.showInformation();
   }
   string chosenType;
-  cout << "Kindly choose a valid type of room you would like. (Please type room id)." << endl;
-  cin >> chosenType;
-  cout << "Your chosen room [" << chosenType << "] will be checked if it is valid or not. Kindly wait." << endl;
-*/
+  bool validRoom = false;
+  bool validRoomForReservation = false;
+  do
+  {
+    do
+    {
+      cout << "Kindly choose a valid type of room you would like. (Please type room type)." << endl;
+      cin >> chosenType;
+      for (Chambre room : Ocean11.getArray())
+      {
+        if (room.getType().compare(chosenType) == 0)
+        {
+          validRoom = true;
+          break;
+        }
+      }
+    } while (!validRoom);
+    for (Chambre room : Ocean11.getArray())
+    {
+      if (room.getType() == chosenType)
+      {
+        for (Reservation reservation : reservationList)
+        {
+          if (room.getId() == reservation.getChambreId())
+          {
+            if (reservation.getStartDate().compareDates(dates.second) || dates.first.compareDates(reservation.getEndDate()))
+            {
+              cout << "Your chosen room of type [" << chosenType << "] is available for reservation from "
+                   << dates.first.returnDate() << " and " << dates.second.returnDate() << " and it's id is "
+                   << room.getId() << "." << endl;
+              validRoomForReservation = true;
+              goto end;
+            }
+            goto end1;
+          }
+        }
+        cout << "Your chosen room of type [" << chosenType << "] is available for reservation from "
+             << dates.first.returnDate() << " and " << dates.second.returnDate()
+             << " and it's id is " << room.getId() << "." << endl;
+        validRoomForReservation = true;
+        goto end;
+      }
+    end1:
+      continue;
+    end:
+      break;
+    }
+    if (!validRoomForReservation)
+    {
+      cout << "Your chosen room of type [" << chosenType << "] is not available for reservation." << endl;
+    }
+  } while (!validRoomForReservation);
 
   //Question 9
-  //Client::chooseClient(clientList);
+  Client::chooseClient(clientList);
 
   //Question 10 a
-  /*
-  Date dateone(10,11,2019);
-  Date datetwo(15,11,2019);
-  int price = 220;
-  Reservation empty;
-  int nbdays = datetwo.nbOfDays(dateone);
-  cout << nbdays << " " << empty.calculateTotalAmount(nbdays, price, 0);
-  */
+
+  // Date dateone(10,11,2019);
+  // Date datetwo(15,11,2019);
+  // int price = 220;
+  // int nbdays = datetwo.nbOfDays(dateone);
+  // //cout << nbdays << " " << res.Reservation::calculateTotalAmount(nbdays, price, 0);
 
   //question 11
   
 
-  int pause;
-  cin >> pause;
   return 0;
 }

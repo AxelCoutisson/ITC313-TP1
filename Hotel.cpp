@@ -2,7 +2,6 @@
 //Modified by Peter Bachour on 12/11/2019
 
 #include "Hotel.h"
-#include "Chambre.h"
 #include <iostream>
 #include <string>
 
